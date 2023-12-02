@@ -22,3 +22,41 @@ mysqlを使用するために以下の環境変数を設定してください
 ## docker
 
 docker化はしていないため、dockerを使用する場合は適宜コードを書き換えてください。
+
+## 追記 アプリ起動方法
+
+ここからアプリの起動方法を記載します。
+またgitの操作やdockerの操作などの説明は前提知識として割愛させていただきます。
+
+### ①gitから当リポジトリをcloneしてリポジトリへ移動
+
+- clone
+```
+git clone 〇〇
+```
+
+- 対象フォルダへ移動
+
+```
+cd web-service-gin
+```
+
+### ②docker imageをbuildする
+
+- build
+```
+docker-compose -f docker-compose.build.yml build
+```
+
+### ③
+
+
+
+<!--
+TODO
+
+airを追加して起動確認。
+muitiをさらに深ぼる
+
+
+ -->

@@ -137,7 +137,7 @@ func main() {
 		User:                 os.Getenv("DBUSER"),
 		Passwd:               os.Getenv("DBPASS"),
 		Net:                  "tcp",
-		Addr:                 "127.0.0.1:3306",
+		Addr:                 "db",
 		DBName:               "myapp",
 		AllowNativePasswords: true,
 	}
@@ -155,11 +155,14 @@ func main() {
 	fmt.Println("Connected!")
 
 	router := gin.Default()
+	router.GET("/", func(c *gin.Context) {
+		c.String(http.StatusOK, "Hello World!")
+	})
 	router.GET("/albums", getAlbums)
 	router.GET("/albums/:id", getAlbumByID)
 	router.POST("/albums", postAlbums)
 	router.PATCH("/albums/:id", updateAlbumByID)
 	router.DELETE("/albums/:id", deleteAlbumByID)
 
-	router.Run("localhost:8080")
+	router.Run(":8080")
 }
