@@ -138,7 +138,7 @@ func main() {
 		Passwd:               os.Getenv("DBPASS"),
 		Net:                  "tcp",
 		Addr:                 "db",
-		DBName:               "myapp",
+		DBName:               os.Getenv("DBNAME"),
 		AllowNativePasswords: true,
 	}
 
@@ -155,6 +155,8 @@ func main() {
 	fmt.Println("Connected!")
 
 	router := gin.Default()
+
+	// 検証用API 不要なら削除する
 	router.GET("/", func(c *gin.Context) {
 		c.String(http.StatusOK, "Hello World!")
 	})

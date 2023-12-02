@@ -48,15 +48,14 @@ cd web-service-gin
 docker-compose -f docker-compose.build.yml build
 ```
 
-### ③
+### ③開発環境構築
 
+- build
+```
+docker-compose -f docker-compose.build.yml build
+```
 
-
-<!--
-TODO
-
-airを追加して起動確認。
-muitiをさらに深ぼる
-
-
- -->
+- 立ち上げ
+```
+docker-compose up
+```
