@@ -6,6 +6,8 @@ services:
     image: go-development:latest
     ports:
       - "8080:8080"
+    volumes:
+      - ./:/app
     environment:
       - DBHOST=db
       - DBUSER=${DBUSER}

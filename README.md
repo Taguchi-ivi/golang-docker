@@ -60,3 +60,9 @@ docker-compose -f docker-compose.build.yml build
 ```
 docker-compose up
 ```
+
+### ③本番環境
+- build
+```
+docker build --target production -t web-service-gin:latest .
+```

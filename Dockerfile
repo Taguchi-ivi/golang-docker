@@ -13,13 +13,12 @@ WORKDIR /app
 COPY --from=builder /app .
 COPY .env .
 RUN go install github.com/cosmtrek/air@latest
-CMD ["air"]
+CMD ["air", "-c", ".air.toml"]
 
 
 # production stage
 FROM alpine:3.18 AS production
 WORKDIR /app
 COPY --from=builder /app/main .
-COPY .env .
 EXPOSE 8080
 CMD [ "/app/main" ]
